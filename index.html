@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    <label>Nhập tháng muốn kiểm tra :</label>
+    <input type="number" id="s1" >
+    <input type="button" id="s2" onclick="auto()" value="kiểm tra">
+    <h3 style="color:#CDC9C9" id="s3"></h3>
+</form>
+</body>
+<script>
+    let m;
+
+    function auto() {
+        let t = document.getElementById('s1').value;
+        switch (t) {
+            case'1':
+            case '3':
+            case '5':
+            case '7':
+            case '8':
+                m = 31;
+                break;
+            case '2':
+                m = '28 hoặc 29 '
+                break;
+            case'4':
+            case '6':
+            case '9':
+            case '11':
+                m = 30;
+                break;
+                default:
+                    alert(' Hãy nhập giá trị nguyên lớn hơn 0 và nhỏ hơn hoặc bằng 12')
+        }
+        if (t<=12 && t!=0)
+        document.getElementById('s3').innerHTML='Trong tháng này có '+m+'ngày'
+    }
+
+</script>
+</html>
